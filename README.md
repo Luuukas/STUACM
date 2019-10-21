@@ -29,6 +29,7 @@ node releaseOfficialMission.js
 前端Vue.js，用到vuex、vue-resource。
 后端Node.js，用到express、formidable、express-session、mysql；
 用Node.js写的爬虫，用到superagent、cheerio。
+RSA加密传输用到jsencrypt、node-rsa。
 ```
 
 ## 文件结构
@@ -43,7 +44,7 @@ node releaseOfficialMission.js
 	
 **ACM-MISSIONS/src/components**
 	Home.vue: 主页，主要用于提供各种文件，网站资源（现已把首页移至后端，该组件被停用）
-	Enroll.vue: 注册页面
+	Enroll.vue: 注册页面（现已把注册移至后端，该组件被停用）
 	MainPage.vue: 主页面
 	showProfile.vue: 主页面中左侧展示个人信息的组件
 	aMindMap.vue: Mind-maps折叠面板下的一项
@@ -59,6 +60,8 @@ node releaseOfficialMission.js
 	
 **ACM-MISSIONS/server/public**
 	Home.html: 首页
+	Enroll.html: 注册页面
+	ManageHome: 后台管理页面
 	files: 该目录保存用户上传的文件
 	imgs: 该目录保存用户头像图片
 	resource: 主页用到的各种公开资源
@@ -77,6 +80,8 @@ node releaseOfficialMission.js
 	refresh.js: 利用爬虫，逐个用户，把该用户绑定的cf,sdutacm账号下所有提交记录爬下来，逐个任务逐道题目在提交记录中查找测评状态，更新数据库中的状态
 	releaseOfficialMission.js: 官方发布任务，把任务添加到所有用户下
 	addCodes.js: 向codes数据库添加可用的激活码
+	resources.js: 服务后台管理的服务器文件
+	ress_handle: 专门管理后台管理页面上传来的文件，同时爬取替换更新静态Home.html
 ```
 ## 数据库相关代码
 ``` bash
@@ -169,3 +174,8 @@ CREATE TABLE `stuacm`.`codes` (
 
 ![editprofile](./effect_pictures/editprofile.png)
 
+![1571695918316](./effect_pictures/1571695918316.png)
+
+![1571695959477](./effect_pictures/1571695959477.png)
+
+![1571695982095](./effect_pictures/1571695982095.png)
