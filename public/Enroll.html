@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./dist/static/layui/css/layui.css" />
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./dist/static/layui/layui.js"></script>
+    <script src="./dist/static/js/jsencrypt.min.js"></script>
+    <script>
+        $.ajaxSetup({ crossDomain: true, xhrFields: { withCredentials: true } });
+        layui.use(["form", "layedit", "laydate"], function () {
+            let layer = layui.layer;
+            layer.open({
+                id: 1,
+                type: 1,
+                closeBtn: 0,
+                anim: 0,
+                scrollbar: false,
+                title: "注册-激活",
+                skin: "layui-layer-rim",
+                area: ["28%", "45%"],
+
+                content:
+                    '<div class="layui-row layui-col-space6" style="margin:auto; margin-top: 5%">' +
+                    '<div class="layui-card-body">' +
+                    '<label class="layui-form-label" style="font-size: medium">用户名：</label>' +
+                    "<div class='layui-input-block'>" +
+                    '<input id="enroll_username" class="layui-input layui-form-danger" lay-verify="required" placeholder="请输入唯一用户名 /^[a-zA-Z0-9_]{4,16}$/">' +
+                    "</div>" +
+                    '<label class="layui-form-label" style="font-size: medium">邮箱：</label>' +
+                    "<div class='layui-input-block'>" +
+                    '<input id="enroll_email" class="layui-input layui-form-danger" lay-verify="required" placeholder="请输入注册邮箱">' +
+                    "</div>" +
+                    '<label class="layui-form-label" style="font-size: medium">密码：</label>' +
+                    "<div class='layui-input-block'>" +
+                    '<input id="enroll_password0" type="password" class="layui-input layui-form-danger" lay-verify="required" placeholder="请输入自定义密码 6-12">' +
+                    "</div>" +
+                    '<label class="layui-form-label" style="font-size: medium">密码：</label>' +
+                    "<div class='layui-input-block'>" +
+                    '<input id="enroll_password1" type="password" class="layui-input layui-form-danger" lay-verify="required" placeholder="请再次输入自定义密码">' +
+                    "</div>" +
+                    '<label class="layui-form-label" style="font-size: medium">激活码：</label>' +
+                    "<div class='layui-input-block'>" +
+                    '<input id="enroll_code" class="layui-input layui-form-danger" lay-verify="required" placeholder="请输入激活码">' +
+                    "</div>",
+                btn: ["注册"],
+                btn1: function (index) {
+                    if (!checkusername($("#enroll_username").val())) return;
+                    if (!checkEmail($("#enroll_email").val())) return;
+                    if (!checkpw($("#enroll_password0").val())) return;
+                    if (!checkequal($("#enroll_password0").val(), $("#enroll_password1").val())) return;
+                    if (!checkcode($("#enroll_code").val())) return;
+
+                    let json = {
+                        username: $("#enroll_username").val()
+                    };
+                    $.ajax({
+                        url: "http://www.stuacm.club/prepareRSA",
+                        type: "post",
+                        data: json,
+                        success: function (res) {
+                            if (res.msg == "prepared") {
+                                let _pubKey = res.tmppubder;
+
+                                let encrypt = new JSEncrypt();
+                                encrypt.setPublicKey(_pubKey);
+
+                                let json = {
+                                    username: $("#enroll_username").val(),
+                                    email: encrypt.encrypt($("#enroll_email").val()),
+                                    password: encrypt.encrypt($("#enroll_password0").val()),
+                                    code: encrypt.encrypt($("#enroll_code").val())
+                                };
+                                $.ajax({
+                                    url: "http://www.stuacm.club/isExits",
+                                    type: "post",
+                                    data: json,
+                                    success: function (res) {
+                                        if (!res.msg) {
+                                            $.ajax({
+                                                url: "http://www.stuacm.club/enroll",
+                                                type: "post",
+                                                data: json,
+                                                success: function (res) {
+                                                    if (res.msg) {
+                                                        layer.msg("Successfully enrolled！", {
+                                                            icon: 1,
+                                                            time: 2000
+                                                        });
+                                                        layer.close(index);
+                                                        window.location.href = "http://www.stuacm.club/Home"
+                                                    } else {
+                                                        layer.msg("Fail to enroll！", {
+                                                            icon: 2,
+                                                            time: 2000
+                                                        });
+                                                    }
+                                                }
+                                            })
+                                        } else {
+                                            layer.msg("Fail to enroll！", {
+                                                icon: 2,
+                                                time: 2000
+                                            });
+                                        }
+                                    }
+                                })
+                            } else {
+                                layer.msg("Fail to enroll！", {
+                                    icon: 2,
+                                    time: 2000
+                                });
+                            }
+                        }
+                    });
+                }
+            })
+        })
+        function checkusername(value) {
+            //value：表单的值
+            if ((value.length == 0)) {
+                layer.msg("用户名不能为空", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+            var uPattern = /^[a-zA-Z0-9_]{4,16}$/;
+            if (!uPattern.test(value)) {
+                layer.msg("用户名含特殊字符或过短过长", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+            if (/(^\_)|(\__)|(\_+$)/.test(value)) {
+                layer.msg("用户名首尾不能出现下划线'_'", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+            if (/^\d+\d+\d$/.test(value)) {
+                layer.msg("用户名不能全为数字", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+            return true;
+        }
+        function checkEmail(myemail) {
+            var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+
+            if (myReg.test(myemail)) {
+                return true;
+            } else {
+                layer.msg("邮箱格式不对!", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+        }
+        function checkpw(password) {
+            if (!(password.length < 12 && password.length >= 6)) {
+                layer.msg("密码长度6-12位!", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+
+            return true;
+        }
+        function checkequal(pw1, pw2) {
+            if (pw1 != pw2) {
+                layer.msg("两次密码不相同!", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+            return true;
+        }
+        function checkcode(code) {
+            if (code.length == 0) {
+                layer.msg("请输入激活码!", {
+                    icon: 2,
+                    time: 2000
+                });
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
