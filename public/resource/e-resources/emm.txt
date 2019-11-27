@@ -1,0 +1,39 @@
+CREATE TABLE `stuacm`.`user` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE,
+  `username` VARCHAR(45) NOT NULL UNIQUE,
+  `password` VARCHAR(45) NOT NULL,
+  `nickname` VARCHAR(45) NULL,
+  `signature` TINYTEXT NULL,
+  `codeforces` VARCHAR(45) NULL,
+  `sdutacm` VARCHAR(45) NULL,
+  `blogs` JSON NULL,
+  `img_url` VARCHAR(128) NULL,
+  `enroll_t` VARCHAR(45) NULL,
+  `email` VARCHAR(128) NOT NULL,
+  PRIMARY KEY (`id`, `username`));
+
+CREATE TABLE `stuacm`.`missions_<username>` (
+  `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(45) NULL,
+  `brief` TINYTEXT NULL,
+  `belong` VARCHAR(45) NULL,
+  `start_t` VARCHAR(45) NULL,
+  `end_t` VARCHAR(45) NULL,
+  `status` VARCHAR(45) NULL,
+  `details` JSON NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `stuacm`.`mindmaps_<username>` (
+  `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
+  `name` VARCHAR(45) NULL,
+  `brief` TINYTEXT NULL,
+  `details` JSON NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `stuacm`.`codes` (
+  `id` INT NOT NULL AUTO_INCREMENT UNIQUE,
+  `value` VARCHAR(64) NULL,
+  `isused` INT NULL,
+  PRIMARY KEY (`id`));
+

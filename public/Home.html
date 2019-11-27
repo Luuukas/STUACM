@@ -1,0 +1,185 @@
+<html><head></head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+    <doctype html>
+
+
+
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            /* Custom Styles */
+            ul.nav-tabs {
+                width: 140px;
+                margin-top: 20px;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+            }
+
+            ul.nav-tabs li {
+                margin: 0;
+                border-top: 1px solid #ddd;
+            }
+
+            ul.nav-tabs li:first-child {
+                border-top: none;
+            }
+
+            ul.nav-tabs li a {
+                margin: 0;
+                padding: 8px 16px;
+                border-radius: 0;
+            }
+
+            ul.nav-tabs li.active a,
+            ul.nav-tabs li.active a:hover {
+                color: #fff;
+                background: #0088cc;
+                border: 1px solid #0088cc;
+            }
+
+            ul.nav-tabs li:first-child a {
+                border-radius: 4px 4px 0 0;
+            }
+
+            ul.nav-tabs li:last-child a {
+                border-radius: 0 0 4px 4px;
+            }
+
+            ul.nav-tabs.affix {
+                top: 30px;
+                /* Set the top position of pinned element */
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                $("#myNav").affix({
+                    offset: {
+                        top: 125
+                    }
+                });
+            });
+        </script>
+
+
+
+        <div class="container">
+            <div class="jumbotron" style="background-image:url(img/headbg.jpg);">
+                <h1 style="color: black;">STUACM Resources</h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-3" id="myScrollspy">
+                    <ul class="nav nav-tabs nav-stacked" id="myNav">
+                        <li class="active">
+                            <a href="#section-1">&#x534F;&#x4F1A;&#x7B80;&#x4ECB;</a>
+                        </li>
+                        <li>
+                            <a href="#section-2">&#x7535;&#x5B50;&#x8D44;&#x6E90;</a>
+                        </li>
+                        <li>
+                            <a href="#section-3">&#x5E38;&#x7528;&#x7F51;&#x7AD9;</a>
+                        </li>
+                        <li>
+                            <a href="#section-4">&#x8BFE;&#x4EF6;&#x6750;&#x6599;</a>
+                        </li>
+                        <li>
+                            <a href="#section-5">&#x8D5B;&#x4E8B;&#x9898;&#x89E3;</a>
+                        </li>
+                        <li>
+                            <a href="#section-6">&#x53D1;&#x5C55;&#x76F8;&#x518C;</a>
+                        </li>
+                        <li>
+                            <a href="https://docs.qq.com/sheet/DTGJOYU9ybURPampC">收支报表</a>
+                        </li>
+                        <li>
+                            <a href="https://view.officeapps.live.com/op/view.aspx?src=http://stuacm.club/han.xlsx">StepByStep</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-9">
+                    <h2 id="section-1">&#x534F;&#x4F1A;&#x7B80;&#x4ECB;</h2>
+                    <div>
+                        <p>&#x7B49;&#x60F3;&#x5199;&#x4E86;&#x518D;&#x6765;&#x5199;&#x5427;</p>
+                    </div>
+                    <hr>
+                    <h2 id="section-2">&#x7535;&#x5B50;&#x8D44;&#x6E90;</h2>
+                    <h4 id="section-2_1" style="margin:2% 3% 1%">&#x7535;&#x5B50;&#x4E66;&#x7C4D;</h4>
+                    <div><a href="./resource/e-resources/&#x56FE;&#x7075;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x4E1B;&#x4E66; &#x7B97;&#x6CD5; &#x7B2C;4&#x7248;.pdf" class="list-group-item">&#x56FE;&#x7075;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x4E1B;&#x4E66; &#x7B97;&#x6CD5; &#x7B2C;4&#x7248;.pdf</a>
+                        
+                        <a href="./resource/e-resources/&#x6311;&#x6218;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7ADE;&#x8D5B;(&#x7B2C;2&#x7248;) &#x9AD8;&#x6E05;&#x5B8C;&#x6574;&#x7248;.pdf" class="list-group-item">&#x6311;&#x6218;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7ADE;&#x8D5B;(&#x7B2C;2&#x7248;)
+                            &#x9AD8;&#x6E05;&#x5B8C;&#x6574;&#x7248;.pdf</a>
+                        <a href="./resource/e-resources/Algorithms-JeffE.pdf" class="list-group-item">Algorithms-JeffE.pdf</a>
+                        
+                        <a href="./resource/e-resources/&#x7B97;&#x6CD5;&#x7ADE;&#x8D5B;&#x5165;&#x95E8;&#x7ECF;&#x5178;&#x7B2C;2&#x7248;&#xFF08;&#x7D2B;&#x7C89;&#x4E66;&#xFF09;.pdf" class="list-group-item">&#x7B97;&#x6CD5;&#x7ADE;&#x8D5B;&#x5165;&#x95E8;&#x7ECF;&#x5178;&#x7B2C;2&#x7248;&#xFF08;&#x7D2B;&#x7C89;&#x4E66;&#xFF09;.pdf</a>
+                        <a href="./resource/e-resources/Competitive Programmer&#x2019;s Handbook.pdf" class="list-group-item">Competitive Programmer&#x2019;s Handbook.pdf</a>
+                        <a href="./resource/e-resources/JavaScript&#x9AD8;&#x7EA7;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#xFF08;&#x7B2C;3&#x7248;&#xFF09;&#x975E;&#x626B;&#x63CF;&#x7248;.pdf" class="list-group-item">JavaScript&#x9AD8;&#x7EA7;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#xFF08;&#x7B2C;3&#x7248;&#xFF09;&#x975E;&#x626B;&#x63CF;&#x7248;.pdf</a>
+                    </div>
+                    <h4 id="section-2_2" style="margin:2% 3% 1%">&#x5176;&#x4ED6;&#x8D44;&#x6E90;</h4>
+                    <div><a href="./resource/e-resources/firefox.png" class="list-group-item">firefox.png</a><a href="./resource/e-resources/chrome.png" class="list-group-item">chrome.png</a><a href="./resource/e-resources/qemu-4.1.0.tar.xz" class="list-group-item">qemu-4.1.0.tar.xz</a><a href="./resource/e-resources/RedBlack.pdf" class="list-group-item">RedBlack.pdf</a><a href="./resource/e-resources/Bit Twiddling Hacks.htm" class="list-group-item">Bit Twiddling Hacks.htm</a>
+                        <a href="./resource/e-resources/C&#x8BED;&#x8A00;&#x5B9E;&#x9A8C;&#x9898;&#x76EE;&#xFF08;&#x5C71;&#x4E1C;&#x7406;&#x5DE5;ACM OJ&#xFF09;.xlsx" class="list-group-item">C&#x8BED;&#x8A00;&#x5B9E;&#x9A8C;&#x9898;&#x76EE;&#xFF08;&#x5C71;&#x4E1C;&#x7406;&#x5DE5;ACM
+                            OJ&#xFF09;.xlsx</a>
+                        <a href="./resource/e-resources/ACM&#x5224;&#x9898;&#x4FE1;&#x606F;&#x8BF4;&#x660E;.doc" class="list-group-item">ACM&#x5224;&#x9898;&#x4FE1;&#x606F;&#x8BF4;&#x660E;.doc</a>
+                        <a href="./resource/e-resources/8&#x5927;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x56FE;&#x6587;&#x8BB2;&#x89E3;.htm" class="list-group-item">8&#x5927;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x56FE;&#x6587;&#x8BB2;&#x89E3;.htm</a>
+                        <a href="./resource/e-resources/&#x7B97;&#x6CD5;&#x57FA;&#x672C;&#x77E5;&#x8BC6;.doc" class="list-group-item">&#x7B97;&#x6CD5;&#x57FA;&#x672C;&#x77E5;&#x8BC6;.doc</a>
+                        <a href="./resource/e-resources/HDOJ&#x9898;&#x76EE;&#x5206;&#x7C7B;.docx" class="list-group-item">HDOJ&#x9898;&#x76EE;&#x5206;&#x7C7B;.docx</a>
+                        <a href="./resource/e-resources/POJ&#x4F7F;&#x7528;&#x6307;&#x5357;.htm" class="list-group-item">POJ&#x4F7F;&#x7528;&#x6307;&#x5357;.htm</a>
+                        <a href="./resource/e-resources/Junior Training Sheet.xlsx" class="list-group-item">Junior
+                            Training
+                            Sheet.xlsx</a>
+                        <a href="./resource/e-resources/&#x56FE;&#x8BBA;&#x603B;&#x7ED3; by amber.pdf" class="list-group-item">&#x56FE;&#x8BBA;&#x603B;&#x7ED3;
+                            by amber.pdf</a>
+                        <a href="./resource/e-resources/&#x80CC;&#x5305;&#x95EE;&#x9898;&#x4E5D;&#x8BB2;.pdf" class="list-group-item">&#x80CC;&#x5305;&#x95EE;&#x9898;&#x4E5D;&#x8BB2;.pdf</a>
+                    </div>
+                    <hr>
+                    <h2 id="section-3">&#x5E38;&#x7528;&#x7F51;&#x7AD9;</h2>
+                    <div><a href="http://www.stuacm.club/website/A2 Online Judge Dynamic Programming problems.html" class="list-group-item">A2 Online Judge Dynamic Programming problems</a><a href="http://www.stuacm.club/website/A2 Online Judge Greedy problems.html" class="list-group-item">A2 Online Judge Greedy problems</a><a href="http://www.stuacm.club/website/A2 Online Judge KMP problems.html" class="list-group-item">A2 Online Judge KMP problems</a><a href="https://oi-wiki.org" class="list-group-item">oi-wiki</a><a href="https://a2oj.com/categories" class="list-group-item">A2 Online Judge</a><a href="https://leetcode-cn.com/" class="list-group-item">leetcode-cn</a>
+                        <a href="http://codeforces.com/" class="list-group-item">codeforces</a>
+                        <a href="https://acm.sdut.edu.cn/onlinejudge2/" class="list-group-item">&#x5C71;&#x4E1C;&#x7406;&#x5DE5;ACM OJ</a>
+                        <a href="http://acm.hdu.edu.cn/" class="list-group-item">&#x676D;&#x7535;OJ</a>
+                        <a href="http://poj.org/" class="list-group-item">&#x5317;&#x5927;OJ</a>
+                    </div>
+                    <hr>
+                    <h2 id="section-4">&#x8BFE;&#x4EF6;&#x6750;&#x6599;</h2>
+                    <div><a href="./resource/courseware/STUACM_2019-11-23_Preview.pdf" class="list-group-item">STUACM_2019-11-23_Preview.pdf</a><a href="./resource/courseware/11&#x6708;&#x6708;&#x8D5B;&#x6D41;&#x7A0B;.pdf" class="list-group-item">11&#x6708;&#x6708;&#x8D5B;&#x6D41;&#x7A0B;.pdf</a><a href="./resource/courseware/STUACM_2019-11-09_Preview.pdf" class="list-group-item">STUACM_2019-11-09_Preview.pdf</a><a href="./resource/courseware/01&#x80CC;&#x5305;&#x6837;&#x4F8B;&#x6F14;&#x793A;.pptx" class="list-group-item">01&#x80CC;&#x5305;&#x6837;&#x4F8B;&#x6F14;&#x793A;.pptx</a><a href="./resource/courseware/STUACM_2019-11-02_Preview.pdf" class="list-group-item">STUACM_2019-11-02_Preview.pdf</a><a href="./resource/courseware/STUACM_2019-10-25_Preview.pdf" class="list-group-item">STUACM_2019-10-25_Preview.pdf</a><a href="./resource/courseware/&#x518D;&#x8C08;01&#x80CC;&#x5305;.pdf" class="list-group-item">&#x518D;&#x8C08;01&#x80CC;&#x5305;.pdf</a><a href="./resource/courseware/&#x5FEB;&#x901F;&#x5E42;_01&#x80CC;&#x5305;_&#x5B8C;&#x5168;&#x80CC;&#x5305;&#x4F8B;&#x9898;.pdf" class="list-group-item">&#x5FEB;&#x901F;&#x5E42;_01&#x80CC;&#x5305;_&#x5B8C;&#x5168;&#x80CC;&#x5305;&#x4F8B;&#x9898;.pdf</a><a href="./resource/courseware/stuacm_form.docx" class="list-group-item">stuacm_form.docx</a><a href="./resource/courseware/&#x6C55;&#x5934;&#x5927;&#x5B66; ACM &#x6A21;&#x677F;.pdf" class="list-group-item">&#x6C55;&#x5934;&#x5927;&#x5B66; ACM &#x6A21;&#x677F;.pdf</a><a href="./resource/courseware/&#x6C55;&#x5934;&#x5927;&#x5B66; ACM &#x6A21;&#x677F;.md" class="list-group-item">&#x6C55;&#x5934;&#x5927;&#x5B66; ACM &#x6A21;&#x677F;.md</a>
+                        <a href="./resource/courseware/19&#x65B0;&#x751F;&#x5A31;&#x4E50;&#x8D5B;&#x6D41;&#x7A0B;.pdf" class="list-group-item">19&#x65B0;&#x751F;&#x5A31;&#x4E50;&#x8D5B;&#x6D41;&#x7A0B;.pdf</a>
+                        <a href="./resource/courseware/&#x9012;&#x5F52;&#x4E60;&#x9898;.pdf" class="list-group-item">&#x9012;&#x5F52;&#x4E60;&#x9898;.pdf</a>
+                        <a href="./resource/courseware/STUACM_2019-09-28_Preview.pdf" class="list-group-item">STUACM_2019-09-28_Preview.pdf</a>
+                        
+
+                        <a href="./resource/courseware/ACM&#x7ADE;&#x8D5B;.pdf" class="list-group-item">ACM&#x7ADE;&#x8D5B;.pdf</a>
+                        
+                        
+                    </div>
+                    <hr>
+                    <h2 id="section-5">&#x8D5B;&#x4E8B;&#x9898;&#x89E3;</h2>
+                    <div><a href="./resource/solutions/STUACM2019&#x65B0;&#x751F;&#x8D5B;&#x9898;&#x89E3;.pdf" class="list-group-item">STUACM2019&#x65B0;&#x751F;&#x8D5B;&#x9898;&#x89E3;.pdf</a>
+                        <a href="./resource/solutions/2018ICPC&#x6C88;&#x9633;&#x7F51;&#x7EDC;&#x8D5B;&#x9898;&#x89E3;.pdf" class="list-group-item">2018ICPC&#x6C88;&#x9633;&#x7F51;&#x7EDC;&#x8D5B;&#x9898;&#x89E3;.pdf</a>
+                        <a href="./resource/solutions/ACM-ICPC 2018 Jiaozuo Online Contest - EOJ Wiki.pdf" class="list-group-item">ACM-ICPC 2018 Jiaozuo Online Contest - EOJ Wiki.pdf</a>
+                        <a href="./resource/solutions/ACM-ICPC 2018 Nanjing Online Contest - EOJ Wiki.pdf" class="list-group-item">ACM-ICPC 2018 Nanjing Online Contest - EOJ Wiki.pdf</a>
+                        <a href="./resource/solutions/ACM-ICPC 2018 Qingdao Online Contest - EOJ Wiki.pdf" class="list-group-item">ACM-ICPC 2018 Qingdao Online Contest - EOJ Wiki.pdf</a>
+                        <a href="./resource/solutions/ACM-ICPC 2018 Xuzhou Online Contest - EOJ Wiki.pdf" class="list-group-item">ACM-ICPC 2018 Xuzhou Online Contest - EOJ Wiki.pdf</a>
+                    </div>
+                    <hr>
+                    <h2 id="section-6">&#x53D1;&#x5C55;&#x76F8;&#x518C;</h2>
+                    <div>
+                        <img alt="16&#x6768;&#x91D1;&#x670B;.jpg">
+                        <img alt="16&#x5362;&#x4E49;&#x6587;.jpg">
+                        <img alt="16&#x9EC4;&#x9547;&#x6D9B;.jpg">
+                    </div>
+                    <hr>
+                    <div style="height:1024px"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </doctype>
+
+
+
+l&gt;</body></html>
